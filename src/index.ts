@@ -21,3 +21,20 @@ type unionType = number | string;
 
 let H: unionType = 123;
 H = `123`;
+
+// ----------------------
+
+type J = 1 | 2 | 3 | `a` | `b` | `c`;
+
+let j: J = 1;
+j = 2;
+j = 3;
+j = `a`;
+j = `b`;
+j = `c`;
+
+type K = { a: string } | { b: number };
+
+let l: K = { a: `123` };
+l = { b: 123 };
+l = { a: `123`, b: 123 };

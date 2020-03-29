@@ -1,29 +1,59 @@
-let a : number;
-let b : string;
-let c : boolean;
-let d : null;
-let e : undefined;
-let f : object;
-let F = {};
-let FF : { text: string };
-let g : any;
+function a (x: number, y: number): number {
+	return x + y;
+}
+const b = (x: number, y: number): number => x + y;
 
-a = 1;
-b = `Hello`;
-c = true;
-d = null;
-e = undefined;
-f = new Object;
-FF = { text: `123` };
+/**
+ * Function Signature
+ */
+let c: (x: number, y: number) => number;
 
-console.table({
-	'a : number': {type: typeof a, value: a},
-	'b : string': {type: typeof b, value: b},
-	'c : boolean': {type: typeof c, value: c},
-	'd : null': {type: typeof d, value: d},
-	'e : undefined': {type: typeof e, value: e},
-	'f : object': {type: typeof f, value: f},
-	'F = {}': {type: typeof F, value: F},
-	'FF : { text : string}': {type: typeof FF, value: FF},
-	'g : any': {type: typeof g, value: g},
-});
+c = b;
+
+/**
+ * Finction without return
+ * 
+ * @param {number} x
+ * @param {number} y
+ */
+let d = (x: number, y: number): void => {
+	console.log(x + y);
+};
+
+/**
+ * Never ending function witout endpoint
+ * 
+ * @param {string} x
+ */
+let e = (x: string): never => {
+	throw new Error(x);
+};
+
+/**
+ * Reload functions
+ */
+
+
+let f = (x: any, y: any): any => {
+	if (typeof x === 'number') {
+		return x + y;
+	} else if (typeof x === 'string') {
+		return `${x} ${y}`;
+	}
+};
+
+console.log(f(1, 2));
+console.log(f(`Ответ`, 3));
+
+function F (x: number, y: number): number;
+function F (x: string, y: number): string;
+function F (x: any, y: any): any {
+	if (typeof x === 'number') {
+		return x + y;
+	} else if (typeof x === 'string') {
+		return `${x} ${y}`;
+	}
+};
+
+console.log(F(1, 2));
+console.log(F(`Ответ`, 3));

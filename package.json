@@ -1,0 +1,18 @@
+{
+  "name": "try-typescript",
+  "version": "0.1.0",
+  "description": "Try Typescript again",
+  "scripts": {
+		"build": "tsc",
+		"dev": "tsc -w --locale ru --sourceMap",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+		"name": "Paul Petrov",
+		"email": "paul@bargamut.ru"
+	},
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "typescript": "^3.8.3"
+  }
+}
